@@ -5,12 +5,12 @@
 int main(int arg_count, char *args[])
 {
 //создаем объект simpleList класса List
+    List simpleList;
     //creating 'dada' obj from Database class
     Database data;
     //Проверяем наличие записей (пока хз зачем)
     if (arg_count > 1)
         {
-        List simpleList;
         //пихаем аргумет поданный на вход программы в 'item' 
         simpleList.name = string(args[1]);
         simpleList.mainList = data.read();
@@ -20,7 +20,7 @@ int main(int arg_count, char *args[])
         //Печатаем меню
         simpleList.print_menu();
         //write data from 'list' vector to file using 'write' function
-        //data.write(simpleList.list);
+        data.write(simpleList.mainList);
         //data.read();
         }
     //Если записей нет - пишем и ничего не делаем 
