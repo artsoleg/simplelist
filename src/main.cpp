@@ -1,7 +1,7 @@
 //Подключаем заголовок с декларациями.
 #include "include/list.h"
 #include "include/database.h"
-//Главная функция
+//Главная функция -z 
 int main(int arg_count, char *args[])
 {
 //создаем объект simpleList класса List
