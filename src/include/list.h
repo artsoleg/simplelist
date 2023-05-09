@@ -26,6 +26,7 @@ class List {
     //Вектор для хранения записей списка
     vector<string> list;
     vector<vector<string>> mainList;
+    int curUserID;
     //Методы класса Список (описаны в list.h)
         //Метод вывода меню
         void print_menu ();
@@ -35,5 +36,6 @@ class List {
         void add_item();
         //Метод удаления записи из списка
         void delete_item();
-        void find_user();
+        bool find_user();
+        void SaveList();
 };

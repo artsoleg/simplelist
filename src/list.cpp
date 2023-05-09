@@ -28,11 +28,11 @@ void List::print_menu () {
             List::delete_item();
             break;
         case 's':
-            return;
+            SaveList();
         case 'q':
         case 'Q':
             cout << "Quitting...\n";
-            exit(0);
+            return;
             break;
         default:
             List::print_menu();
@@ -51,7 +51,7 @@ void List::print_list()
     cout << list_index << " - " << list[list_index] << "\n";
     }
     //Предлагаем выбор вернуться в меню
-    cout << "Print 'm' for Menu or q for Quit ";
+    cout << "Print 'm' for Menu or q for Quit without saving";
     //Считываем 
     char choice;
     cin >> choice;
@@ -130,7 +130,7 @@ void List::delete_item()
     List::print_menu();   
 }
 
-void List::find_user() {
+bool List::find_user() {
     bool userFound  = false;
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "*** Welcome, " << name << " ***\n";
@@ -139,8 +139,22 @@ void List::find_user() {
         if (mainList[user_index][0] == name) {
             cout << "User " << name << " has been found!\n";
             list = mainList[user_index];
+            curUserID = user_index;
             userFound = true;
             break;
         }      
     }
+    if ( userFound == false )
+    {
+        list.push_back(name);
+        mainList.push_back(list);
+        curUserID = (int)mainList.size()-1;
+    }
+    return userFound;
+}
+
+void List::SaveList() {
+    cout << "Saving the list...\n";
+    mainList[curUserID] = list;
+    print_menu();
 }

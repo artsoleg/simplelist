@@ -14,7 +14,7 @@ int main(int arg_count, char *args[])
         //пихаем аргумет поданный на вход программы в 'item' 
         simpleList.name = string(args[1]);
         simpleList.mainList = data.read();
-        simpleList.find_user();
+        bool userFound = simpleList.find_user();
         //and into первую запись (пока хз зачем пушит, поэтому закомменчено)
         //list.push_back(item);
         //Печатаем меню

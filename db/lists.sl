@@ -1,0 +1,14 @@
+#Art
+item1
+item2
+item3
+item4
+item5
+item6
+itrm7
+%
+#Gleb
+rew
+wer
+dfg
+%

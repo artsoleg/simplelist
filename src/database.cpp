@@ -39,7 +39,6 @@ vector<vector<string>> Database::read(){
             if ( line.front() == '#') {
                 //DBG
                 cout << "Found a hashtag: " << line << "\n";
-                //?? front or begin?
                 line.erase(line.begin());
                 //DBG
                 cout << "Username is: " << line << "\n";
